@@ -104,7 +104,7 @@ git commit -m "Add blog post about first meeting"
 4. Push branch:
 
 ```bash
-git push origin new-blogpost
+git push origin branch-name
 ```
 
 5. Create a Pull Request on GitHub.
