@@ -1,0 +1,17 @@
+site_name: Quiz CLI projekt
+
+theme:
+  theme:
+  logo: assets/pyladies.png
+  language: cs
+  name: material
+  palette:
+    primary: white
+    accent: pink
+
+nav:
+  - Úvod: index.md
+  - První sraz: 2026-02-05-prvni-sraz.md
+# - Druhý sraz: # tady vlož odkaz na druhý sraz
+# - Třetí sraz: # tady vlož odkaz na třetí sraz
+# - Čtvrtý sraz: # a tak dále, pozor na odsazení
