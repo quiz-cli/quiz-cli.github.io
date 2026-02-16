@@ -16,7 +16,6 @@ Live version: https://quiz-cli.github.io
 This blog repository contains:
 - Markdown blog posts (`docs/`)
 - MkDocs configuration (`mkdocs.yml`)
-- Generated static website (`site/`) used by GitHub Pages
 
 
 The actual application code lives in separate repositories (server, client, admin, common).
@@ -24,38 +23,28 @@ The actual application code lives in separate repositories (server, client, admi
 
 ## How to run the blog locally
 
-### 1. Clone the repository (to your Quiz-CLI folder)
+### Clone the repository
 
 ```bash
 git clone https://github.com/quiz-cli/quiz-cli.github.io
 cd quiz-cli.github.io
 ```
 
-### 2. Install dependencies
+### Install dependencies
 
 ```bash
 pip install mkdocs mkdocs-material
 ```
 
-### 3. Run local server
+### Run local server
 
 ```bash
 mkdocs serve
 ```
 Open in browser: http://127.0.0.1:8000
 
-This shows a development preview of the blog.
+This shows a development preview of the blog. No generated HTML files are stored in the repo.
 
-
-### 4. Build the static website
-
-```bash
-mkdocs build
-```
-
-This command generates the production-ready static website into the `site/` directory.
-
-The content of this directory is what gets published publicly.
 
 ## Writing a new blog post
 - All blog posts live in the `docs/` directory
@@ -64,57 +53,55 @@ The content of this directory is what gets published publicly.
 
 The post will appear on the website once:
 - It is added to the navigation in `mkdocs.yml`
-- The site is rebuilt using `mkdocs build`
+- The changes are pushed to GitHub
 
 
-### 5. Navigation configuration
+### Navigation configuration
 Navigation is defined in `mkdocs.yml`:
 
 ```yaml
 nav:
+  - Úvod: index.md
   - První sraz: 2026-02-05-prvni-sraz.md
+# - Druhý sraz:
+# - Třetí sraz:
+# - Čtvrtý sraz:
 ```
 You can reorder posts or add new ones here.
 
 
 ## Deployment (GitHub Pages)
 
-The blog is deployed using GitHub Pages.
+The blog is deployed using GitHub Pages and GitHub Actions.
 
 How it works:
 
 - GitHub Pages is enabled for this repository
-- Source branch: `main`
-- Published folder: `site/`
-- The website is served as static HTML
+- Source: GitHub Actions
+- The website is built automatically from `docs/` directory
+- No generated HTML files are stored in the repository
 
-GitHub does not run MkDocs itself — the static site must be generated locally using `mkdocs build` and committed to the repository.
-
-Every push to `main` that updates the `site/` directory updates the public website.
+Every push to `main` that updates the `docs/` directory automatically updates the public website.
 
 ### Contributing workflow
 1. Create a new branch:
 ```bash
 git checkout -b branch-name
 ```
-2. Write or update content in docs/
+2. Write or update content in `docs/`
 
-3. Build the site:
-```bash
-mkdocs build
-```
-4. Commit changes (including the `site/` directory):
+3. Commit changes:
 ```bash
 git add .
 git commit -m "Update blog content"
 ```
 
-5. Push branch:
+4. Push branch:
 
 ```bash
 git push origin branch-name
 ```
 
-6. Create a Pull Request on GitHub.
+5. Create a Pull Request on GitHub.
 
 
