@@ -1,4 +1,7 @@
-site_name: Quiz CLI projekt
+site_name: Quiz CLI projekt blog
+
+docs_dir: docs_src
+site_dir: docs
 
 theme:
   theme:
