@@ -13,8 +13,8 @@ Live version: https://quiz-cli.github.io
 
 ## Repository structure
 
-This blog repository contains:
-- Markdown blog posts (`docs/`)
+- Markdown blog posts (`docs_src/`)
+- Generated static website (`docs/`)
 - MkDocs configuration (`mkdocs.yml`)
 
 
@@ -43,16 +43,17 @@ mkdocs serve
 ```
 Open in browser: http://127.0.0.1:8000
 
-This shows a development preview of the blog. No generated HTML files are stored in the repo.
+This shows a development preview of the blog.
 
 
 ## Writing a new blog post
-- All blog posts live in the `docs/` directory
+- All blog posts live in the `docs_src/` directory
 - Each post is one Markdown file
 - File name example: *2026-02-05-prvni-sraz.md*
 
 The post will appear on the website once:
 - It is added to the navigation in `mkdocs.yml`
+- The site is rebuilt using `mkdocs build`
 - The changes are pushed to GitHub
 
 
@@ -72,36 +73,52 @@ You can reorder posts or add new ones here.
 
 ## Deployment (GitHub Pages)
 
-The blog is deployed using GitHub Pages and GitHub Actions.
+The blog is deployed using GitHub Pages.
 
 How it works:
 
 - GitHub Pages is enabled for this repository
-- Source: GitHub Actions
-- The website is built automatically from `docs/` directory
-- No generated HTML files are stored in the repository
+- Source branch: `main`
+- Published folder: `docs/`
+- The website is served as static HTML
 
-Every push to `main` that updates the `docs/` directory automatically updates the public website.
+GitHub does not run MkDocs itself — the static site must be generated locally.
+
+## Build and publish
+To publish changes:
+```bash
+mkdocs build
+git add docs
+git commit -m "Build static site"
+git push
+```
+Every push to `main` that updates the `docs/` directory updates the public website.
 
 ### Contributing workflow
 1. Create a new branch:
 ```bash
 git checkout -b branch-name
 ```
-2. Write or update content in `docs/`
+2. Write or update content in `docs_src/`
 
-3. Commit changes:
+3. Build the site:
+
+```bash
+mkdocs build
+```
+
+4. Commit changes:
 ```bash
 git add .
 git commit -m "Update blog content"
 ```
 
-4. Push branch:
+5. Push branch:
 
 ```bash
 git push origin branch-name
 ```
 
-5. Create a Pull Request on GitHub.
+6. Create a Pull Request on GitHub.
 
 
