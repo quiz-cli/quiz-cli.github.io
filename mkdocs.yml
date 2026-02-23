@@ -15,6 +15,6 @@ theme:
 nav:
   - Úvod: index.md
   - První sraz: 2026-02-05-prvni-sraz.md
-# - Druhý sraz: # tady vlož odkaz na druhý sraz
+  - Druhý sraz: 2026-02-12-druhy-sraz.md
 # - Třetí sraz: # tady vlož odkaz na třetí sraz
-# - Čtvrtý sraz: # a tak dále, pozor na odsazení
+# - Čtvrtý sraz: # tady vlož odkaz na čtvrtý sraz
