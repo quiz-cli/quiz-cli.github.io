@@ -84,15 +84,6 @@ How it works:
 
 GitHub does not run MkDocs itself — the static site must be generated locally.
 
-## Build and publish
-To publish changes:
-```bash
-mkdocs build
-git add docs
-git commit -m "Build static site"
-git push
-```
-Every push to `main` that updates the `docs/` directory updates the public website.
 
 ### Contributing workflow
 1. Create a new branch:

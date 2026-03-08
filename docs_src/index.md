@@ -20,6 +20,8 @@ Cílem ale není jen napsat kód. Hlavně si chceme:
 
 - a nebát se složitějších témat jako asynchronní programování.
 
+Jestli se chcete podívat, jak nám to jde, mrkněte na náš [GitHub](https://github.com/quiz-cli).
+
 ---
 
 ## Proč tenhle blog vznikl?
