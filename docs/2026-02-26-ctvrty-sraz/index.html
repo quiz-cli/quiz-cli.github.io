@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#spusteni-aneb-jake-repo-pustit-driv" class="md-skip">
+          Přeskočit obsah
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -310,6 +315,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Čtvrtý sraz
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -326,6 +349,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spusteni-aneb-jake-repo-pustit-driv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spuštění aneb jaké repo pustit dřív
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jak-se-deje-kviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jak se děje kvíz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vysvetlujeme-si-klienta-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vysvětlujeme si klienta (client)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aktualni-omezeni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aktuální omezení:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -349,6 +433,58 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spusteni-aneb-jake-repo-pustit-driv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spuštění aneb jaké repo pustit dřív
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jak-se-deje-kviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jak se děje kvíz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vysvetlujeme-si-klienta-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vysvětlujeme si klienta (client)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aktualni-omezeni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aktuální omezení:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -366,49 +502,66 @@
 
   <h1>Čtvrtý sraz</h1>
 
-<p>Zápis z meetingu – IT projekt</p>
-<p>Vysvětlovali jsme is logiku hry.Procházeli jsme část admin, ale nejdřív jsme si museli spustit server. Ke spuštění serveru používáme UV - příkaz uv run.</p>
-<p>&nbsp;       uv = hlavní command</p>
-<p>&nbsp;       run = subcommand (spustí nástroj nebo aplikaci)</p>
-<p>Pak jsme spustili quiz-admin pomocí </p>
-<p>&nbsp;  quiz-admin localhost:8000 .\data\quiz_example.yaml </p>
-<p>Pokud příkaz není nalezen, stačí doplnit uv run:</p>
-<p>&nbsp;   uv run quiz-admin localhost:8000 .\data\quiz_example.yaml</p>
-<p>Pak jsme si spustili quiz-client. Pokud klient nezadá jméno hned, aplikace se zeptá:</p>
-<p>&nbsp;       quiz-client localhost:8000</p>
-<p>&nbsp;       Choose your name:</p>
-<p>Když klient vypíše jméno, tak se nám pak na admin propíšou přihlášení hráči. Typická jména pro IT verze bývají Alice a Bob.</p>
-<p>Průběh kvízu</p>
-<p>Máme nadefinované otázky - budeme k tomu využívat YAML.</p>
-<p>Admin odešle otázku na server (y) → server pošle otázku ke klientům → klienti odpovídají.</p>
-<p>Server registruje odpovědi, ale zatím je nevyhodnocuje. </p>
-<p>Když admin znovu pošle otázku (y), posílá se další otázka.</p>
-<p>Počet otázek je nyní 2. Kvíz se ukončí, jakmile se odpoví na poslední otázku. </p>
-<p>Po zodpovězení poslední otázky server odpojí klienty. </p>
-<p>Pak se výsledky v JSON pošlou adminovi. Budeme je formátovat pomocí jq (instalace jq na Windows:winget install jqlang.jq). Samotné formátování pak vypadá takto:  </p>
-<p>&nbsp;  '[{"player":"alice","question_number":0,"answer":"a","correct":true},{"player":"bob","question_number":0,"answer":"b","correct":true},{"player":"alice","question_number":1,"answer":"cd","correct":true},{"player":"bob","question_number":1,"answer":"blabla","correct":true}]' | jq</p>
-<p>Admin se následně také odpojí. Konec.</p>
-<p>Aktuální omezení:</p>
-<ul>
-<li>&nbsp;    Máme jen 2 otázky, doplníme další. </li>
-<li>&nbsp;    Máme variantu otázky jen na a-b-c</li>
-<li>&nbsp;    Klienti mohou odpovídat i mimo aktivní otázku, ale odpověď se nezaznamená.</li>
-<li>&nbsp;    Admin nevidí počet hráčů, kteří už odpověděli (např. 4 ze 7).</li>
-<li>&nbsp;    Nemáme hodnocení odpovědí</li>
-</ul>
-<p>&nbsp;      Je v plánu zobrazovat výsledky pomocí JSON.</p>
-<p>&nbsp;      Padl návrh udělat kontrolu odpovědí. Kdyby zadaná odpověď nebyla v nabídce, měli bychom hráče upozornit.</p>
+<p>2026-02-26</p>
+<p><strong>Lektor:</strong><br />
+Martin Zelený</p>
+<p><strong>Zápis:</strong><br />
+Veronika Vrbková</p>
+<hr />
+<p>Vysvětlovali jsme si logiku kvízu. Procházeli jsme část admin a klient a řekli si nějaká kvízová omezení, která zatím máme. Pak jsme se přesunuli na Pyvo do Artbaru.</p>
+<hr />
+<h2 id="spusteni-aneb-jake-repo-pustit-driv">Spuštění aneb jaké repo pustit dřív</h2>
+<p>Nejdřív si spouštíme server. Ke spuštění serveru používáme UV - příkaz uv run.
+- uv = hlavní command
+- run = subcommand (spustí nástroj nebo aplikaci)</p>
+<p>Pak jsme spustili quiz-admin pomocí
+quiz-admin localhost:8000 .\data\quiz_example.yaml 
+- pokud příkaz není nalezen, stačí doplnit uv run:
+uv run quiz-admin localhost:8000 .\data\quiz_example.yaml</p>
+<p>Nakonec jsme si spustili quiz-client. </p>
+<p>Pokud klient nezadá jméno hned, aplikace se zeptá, př: 
+quiz-client localhost:8000
+Choose your name:</p>
+<p>Když klient vypíše jméno, tak se nám pak na admin propíšou přihlášení hráči. Dozvěděli jsme se, že typická jména pro IT verze bývají <em>Alice</em> a <em>Bob</em>.</p>
+<p>Testovací kvízové otázky máme zatím jen 2. K jejich tvorbě budeme využívat YAML. </p>
+<h2 id="jak-se-deje-kviz">Jak se děje kvíz</h2>
+<ol>
+<li>Admin odešle otázku na server pomocí <em>y</em> </li>
+<li>Server pošle otázku ke klientům</li>
+<li>Klienti odpovídají</li>
+<li>Server registruje odpovědi, ale zatím je nevyhodnocuje! </li>
+<li>Admin znovu pošle otázku <em>y</em>, posílá se přes server klientům další otázka.</li>
+<li>Klienti odpovídají.</li>
+<li>Kvíz se ukončí, jakmile se odpoví na poslední otázku (v našem případě po zodpověezení druhé otázky). Po zodpovězení server odpojí klienty. </li>
+<li>Pak se výsledky v JSON pošlou adminovi.</li>
+<li>Admin se následně také odpojí. Konec.</li>
+</ol>
+<p><strong>Formátování výsledků JSON</strong>
+Budeme je formátovat pomocí jq 
+- Instalace jq na Windows &gt;&gt; winget install jqlang.jq 
+- Samotné formátování výsledků pak vypadá takto:<br />
+'[{"player":"alice","question_number":0,"answer":"a","correct":true},{"player":"bob","question_number":0,"answer":"b","correct":true},{"player":"alice","question_number":1,"answer":"cd","correct":true},{"player":"bob","question_number":1,"answer":"blabla","correct":true}]' | jq</p>
+<h2 id="vysvetlujeme-si-klienta-client">Vysvětlujeme si klienta (client)</h2>
 <p>Potom jsme si otevřeli soubory k projektu ve VS Code. Otevřeli jsme si samostatná okna pro server - client - admin.</p>
-<p><strong>Vysvětlujeme si klienta (client)</strong></p>
-<p>Klient zavolá asynchronně send and receive messages. Tím se vytvoří websocket spojení na to url. Přijímání a odpovídání na otázky je tedy asynchronní a tedy korutinní pro: send messages, receive messages.</p>
+<p>Klient zavolá asynchronně send and receive messages. Tím se vytvoří websocket spojení na to url. Přijímání a odpovídání na otázky je asynchronní a tedy korutinní.</p>
 <p>Při prvním spojení si také vytváříme ID klienta přes jeho odpověď na otázku na jméno.</p>
-<p>Server si díky tomu poznačí, že je to ID toho daného klienta a pak budou všechny odpovědi spárované přes to ID. </p>
-<p>await ws.send(json.dumps({"client_id": client_id, "answer": user_input}))</p>
+<p>Server si díky tomu poznačí, že je to ID toho daného klienta a pak budou všechny odpovědi spárované přes to ID. 
+await ws.send(json.dumps({"client_id": client_id, "answer": user_input}))</p>
 <p>Klient přijímá otázky ze serveru permanentně. Když admin zašle otázku, tak se zobrazí u klienta, ten na otázku odpovídá. Po zadání odpovědi se odešle JSON.</p>
+<h2 id="aktualni-omezeni">Aktuální omezení:</h2>
+<ul>
+<li>Máme jen 2 otázky, doplníme další. </li>
+<li>Máme variantu otázky jen na a-b-c</li>
+<li>Klienti mohou odpovídat i mimo aktivní otázku, ale odpověď se nezaznamená.</li>
+<li>Admin nevidí počet hráčů, kteří už odpověděli (např. 4 ze 7).</li>
+<li>Nemáme hodnocení odpovědí - padl návrh udělat kontrolu odpovědí tzn. kdyby zadaná odpověď nebyla v nabídce, měli bychom hráče upozornit.</li>
+</ul>
 <p><strong>Konečné poznámky:</strong> </p>
-<p>Musíme se starat o logiku té hry</p>
-<p>Možná funkci def print_question přidáme do quiz-common, aby to bylo možné pro více komponentů.</p>
-<p>Pak jsme se přesunuli na Pyvo, kde měla přednášku Veronika Kabátová z RedHat.</p>
+<ul>
+<li>Musíme se starat o logiku hry.</li>
+<li>Možná funkci def print_question přidáme do quiz-common, aby to bylo možné pro více komponentů.</li>
+<li>Pak jsme se přesunuli na Pyvo, kde měla přednášku Veronika Kabátová z RedHat o tom, jaké to je v IT a jak se posunovat na žebříčku výš.</li>
+</ul>
 
 
 
