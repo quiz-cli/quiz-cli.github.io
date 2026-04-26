@@ -25,7 +25,7 @@ Jedním z klíčových bodů bylo sjednocení formátu zpráv posílaných mezi 
 
 ### Komunikační diagram
 
-![Komunikační diagram](../assets/2026-04-26/diagram_komunikace.png)
+![Komunikační diagram](assets/2026-04-26/diagram_komunikace.png)
 
 ### Novinka v Pythonu: match + case
 
