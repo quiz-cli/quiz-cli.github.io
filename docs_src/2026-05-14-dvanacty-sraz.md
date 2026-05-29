@@ -191,16 +191,7 @@ Pak jsme šli přímo do kódu.
 
 Objevila se nová async coroutine, která rozesílala hráčům jejich výsledky.
 
-Martin vysvětloval, že:
-
-- nejde o klasickou funkci
-- ale coroutine
--  se pro síťovou komunikaci
-- běží neblokujícím způsobem
-
-Tedy:
-
-program mezitím může dělat i jiné věci.
+Martin vysvětloval, že nejde o klasickou funkci, ale coroutine pro síťovou komunikaci, která běží neblokujícím způsobem, program tedy mezitím může dělat i jiné věci.
 
 ---
 ## Dvě hvězdičky a rozbalování slovníků
