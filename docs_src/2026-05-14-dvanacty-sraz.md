@@ -151,8 +151,8 @@ Po všech předchozích bojích s MkDocs a GitHub Pages už to konečně začín
 
 Potom jsme přešli na testování Dašiny změny:
 
-- [https://github.com/quiz-cli/server issue #22](https://github.com/quiz-cli/quiz-server/issues/22?utm_source=chatgpt.com)
-- [https://github.com/quiz-client issue #10](https://github.com/quiz-cli/quiz-client/issues/10?utm_source=chatgpt.com)
+- [https://github.com/quiz-cli/server issue #22](https://github.com/quiz-cli/quiz-server/issues/22)
+- [https://github.com/quiz-client issue #10](https://github.com/quiz-cli/quiz-client/issues/10)
 
 Funkce zobrazovala hráčům jejich výsledky po dokončení quizu.
 
