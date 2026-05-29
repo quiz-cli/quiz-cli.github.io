@@ -147,7 +147,7 @@ Ukazovali jsme si i aktualizovaný index.md, díky kterému se články správn�
 Po všech předchozích bojích s MkDocs a GitHub Pages už to konečně začíná fungovat stabilně.
 
 ---
- ##Testování Dášina PR
+## Testování Dášina PR
 
 Potom jsme přešli na testování Dašiny změny:
 
