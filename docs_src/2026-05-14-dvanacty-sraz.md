@@ -268,3 +268,4 @@ Více:
 A začíná být vidět, že programování není jen psaní kódu.
 
 Je to hlavně práce s ostatními lidmi.
+
