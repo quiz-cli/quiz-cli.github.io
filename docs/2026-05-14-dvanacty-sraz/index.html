@@ -12,6 +12,8 @@
         <link rel="prev" href="../2026-04-23-jedenacty-sraz/">
       
       
+        <link rel="next" href="../2026-05-21-trinacty-sraz/">
+      
       
         
       
@@ -661,6 +663,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#testovani-dasina-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testování Dášina PR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kdyz-neco-nefunguje-a-pak-najednou-ano" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -730,6 +743,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-05-21-trinacty-sraz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Třináctý sraz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -831,6 +871,17 @@
     <span class="md-ellipsis">
       
         Blog už funguje správně
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testovani-dasina-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testování Dášina PR
       
     </span>
   </a>
@@ -1023,11 +1074,11 @@
 <p>Ukazovali jsme si i aktualizovaný index.md, díky kterému se články správně načítají v navigaci blogu.</p>
 <p>Po všech předchozích bojích s MkDocs a GitHub Pages už to konečně začíná fungovat stabilně.</p>
 <hr />
-<p>##Testování Dášina PR</p>
+<h2 id="testovani-dasina-pr">Testování Dášina PR</h2>
 <p>Potom jsme přešli na testování Dašiny změny:</p>
 <ul>
-<li><a href="https://github.com/quiz-cli/quiz-server/issues/22?utm_source=chatgpt.com">https://github.com/quiz-cli/server issue #22</a></li>
-<li><a href="https://github.com/quiz-cli/quiz-client/issues/10?utm_source=chatgpt.com">https://github.com/quiz-client issue #10</a></li>
+<li><a href="https://github.com/quiz-cli/quiz-server/issues/22">https://github.com/quiz-cli/server issue #22</a></li>
+<li><a href="https://github.com/quiz-cli/quiz-client/issues/10">https://github.com/quiz-client issue #10</a></li>
 </ul>
 <p>Funkce zobrazovala hráčům jejich výsledky po dokončení quizu.</p>
 <p>Martin při tom ukazoval několik praktických věcí:</p>
@@ -1057,15 +1108,7 @@
 <h2 id="async-coroutine-a-posilani-zprav">Async coroutine a posílání zpráv</h2>
 <p>Pak jsme šli přímo do kódu.</p>
 <p>Objevila se nová async coroutine, která rozesílala hráčům jejich výsledky.</p>
-<p>Martin vysvětloval, že:</p>
-<ul>
-<li>nejde o klasickou funkci</li>
-<li>ale coroutine</li>
-<li>se pro síťovou komunikaci</li>
-<li>běží neblokujícím způsobem</li>
-</ul>
-<p>Tedy:</p>
-<p>program mezitím může dělat i jiné věci.</p>
+<p>Martin vysvětloval, že nejde o klasickou funkci, ale coroutine pro síťovou komunikaci, která běží neblokujícím způsobem, program tedy mezitím může dělat i jiné věci.</p>
 <hr />
 <h2 id="dve-hvezdicky-a-rozbalovani-slovniku">Dvě hvězdičky a rozbalování slovníků</h2>
 <p>Narazili jsme i na známé:</p>
