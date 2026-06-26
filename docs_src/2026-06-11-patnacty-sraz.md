@@ -22,7 +22,7 @@ Jana nám ukázala zvláštní bug. Dosud jsme hru testovali jenom se dvěma hr�
 
 Není zřejmé, jestli ten bug byl v původním kódu, nebo byl přidán v nějakém commitu. Martin řekl, že možná budeme potřebovat příkaz `git bisect`, který automaticky rozdělí historii na půl a postupně zužuje rozsah – dokud nenajde přesně ten commit, kde se chyba poprvé objevila. 
 
-Také Martin nám ukázal, jak použít debugging, ale pro tento bug to neposkytlo žádné informace.
+Také Martin nám ukázal, jak použít debugging s pomoci funkce `breakpoint()`, ale pro tento bug to neposkytlo žádné informace.
 
 Hned po srazu ale Jana udělala PR, který ten bug fixnul.
 
